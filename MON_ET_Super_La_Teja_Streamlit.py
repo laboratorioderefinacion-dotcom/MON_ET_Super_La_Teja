@@ -218,12 +218,10 @@ if archivo is not None:
                 color = "green"
                 estado = "Resultado equivalente al método ASTM D 2700"
                 icono = "🟢"
-                mostrar_valor = True
             else:
                 color = "red"
                 estado = "Resultado NO confiable. Recomendar ASTM D 2700"
                 icono = "🔴"
-                mostrar_valor = True  # si querés ocultar el valor cuando no es confiable, poné False
 
             # ======================================================
             # RESULTADO VISUAL PRO
@@ -235,12 +233,12 @@ if archivo is not None:
             with col1:
                 st.markdown("### 🔢 MON_ET estimado")
 
-                if mostrar_valor:
+                if mon_et_std < UMBRAL_METODO:
                     valor = str(mon_et_estimado).replace(".", ",")
-                    color_val = "black" if mon_et_std <= UMBRAL_METODO else "red"
+                    color_ron = "black"
                 else:
                     valor = "❌"
-                    color_val = "red"
+                    color_ron = "red"
 
                 st.markdown(
                     f"""
@@ -256,13 +254,9 @@ if archivo is not None:
                     unsafe_allow_html=True
                 )
 
-                st.caption(f"Error (σ) estimado por Monte Carlo: **{str(error_reportado).replace('.', ',')}**")
-
             with col2:
                 st.markdown(f"### 📋 LIMS: {celda_lims}")
-                st.caption(f"Producto: **{celda_producto}**")
-                st.caption(f"SamplingPoint: **{celda_sp}**")
-
+                
             st.markdown("---")
 
             st.markdown(
