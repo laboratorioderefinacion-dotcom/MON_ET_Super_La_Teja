@@ -246,7 +246,6 @@ if archivo is not None:
                         text-align: center;
                         font-size: 34px;
                         font-weight: bold;
-                        color: {color_val};
                     ">
                         {valor}
                     </div>
