@@ -216,11 +216,11 @@ if archivo is not None:
             # ======================================================
             if mon_et_std <= UMBRAL_METODO:
                 color = "green"
-                estado = "Resultado equivalente al método ASTM D 2700"
+                estado = "ALTA CONFIABILIDAD"
                 icono = "🟢"
             else:
                 color = "red"
-                estado = "Resultado NO confiable. Recomendar ASTM D 2700"
+                estado = "BAJA CONFIABILIDAD"
                 icono = "🔴"
 
             # ======================================================
