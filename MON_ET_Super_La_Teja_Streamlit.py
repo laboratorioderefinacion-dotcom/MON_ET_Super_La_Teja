@@ -46,7 +46,7 @@ REPRO_METODO = 0.83
 UMBRAL_METODO = REPRO_METODO / 2      # 0.415 → ~0.42 como en tu comentario
 
 SIGMA_ANALITICO = 0.42
-N_SIM_DEFAULT = 100
+n_sim = 100
 
 # ==========================================================
 # CARGA MODELO
@@ -60,7 +60,7 @@ def cargar_modelo():
 
 try:
     GBR, columnas_modelo = cargar_modelo()
-    st.success("✅ Modelo Gradient Boosting cargado con validación metrológica")
+    st.success("✅ Modelo Gradient Boosting con validación metrológica")
 except Exception as e:
     st.error("❌ Error al cargar el modelo o las columnas (.joblib)")
     st.caption(f"Detalle técnico: {e}")
