@@ -36,9 +36,7 @@ a[href^="#"] { display: none !important; }
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("## 🧪 Estimación de MON_ET")
-
-st.markdown("## Gasolina Super La Teja")
+st.markdown("## 🧪 Estimación de MON_ET - Super La Teja")
 
 # ==========================================================
 # CRITERIOS METROLÓGICOS (tus valores)
@@ -49,12 +47,6 @@ UMBRAL_METODO = REPRO_METODO / 2      # 0.415 → ~0.42 como en tu comentario
 
 SIGMA_ANALITICO = 0.42
 N_SIM_DEFAULT = 100
-
-# Si querés hacerlo configurable (opcional):
-with st.expander("⚙️ Opciones (avanzado)"):
-    N_SIM = st.slider("Simulaciones Monte Carlo (N)", 50, 500, N_SIM_DEFAULT, step=50)
-    factor_ruido = st.slider("Factor de ruido (SIGMA × factor)", 0.01, 0.20, 0.05, step=0.01)
-    st.caption("El ruido se genera como Normal(0, SIGMA_ANALITICO × factor).")
 
 # ==========================================================
 # CARGA MODELO
@@ -282,8 +274,4 @@ if archivo is not None:
                 """,
                 unsafe_allow_html=True
             )
-
-            # Extra opcional: mostrar inputs usados (para trazabilidad)
-            #with st.expander("🔎 Ver variables usadas por el modelo"):
-                #st.dataframe(df_pred, use_container_width=True)
 
