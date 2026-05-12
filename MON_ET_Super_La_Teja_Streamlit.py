@@ -22,7 +22,7 @@ warnings.filterwarnings("ignore")
 # ==========================================================
 
 st.set_page_config(
-    page_title="MON_ET – Gasolina Súper",
+    page_title="MON_ET – Gasolina Super La Teja",
     page_icon="🧪",
     layout="centered"
 )
@@ -36,7 +36,9 @@ a[href^="#"] { display: none !important; }
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("## 🧪 Estimación de MON_ET – Gasolina Súper (GBR)")
+st.markdown("## 🧪 Estimación de MON_ET")
+
+st.markdown("## Gasolina Super La Teja")
 
 # ==========================================================
 # CRITERIOS METROLÓGICOS (tus valores)
@@ -282,6 +284,6 @@ if archivo is not None:
             )
 
             # Extra opcional: mostrar inputs usados (para trazabilidad)
-            with st.expander("🔎 Ver variables usadas por el modelo"):
-                st.dataframe(df_pred, use_container_width=True)
+            #with st.expander("🔎 Ver variables usadas por el modelo"):
+                #st.dataframe(df_pred, use_container_width=True)
 
