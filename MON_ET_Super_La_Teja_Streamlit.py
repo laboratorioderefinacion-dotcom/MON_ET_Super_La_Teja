@@ -36,7 +36,8 @@ a[href^="#"] { display: none !important; }
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("## 🧪 Estimación de MON_ET - Super La Teja")
+st.markdown("## 🧪 Estimación de MON_ET")
+st.markdown("##    Gasolina Super Planta La Teja")
 
 # ==========================================================
 # CRITERIOS METROLÓGICOS (tus valores)
