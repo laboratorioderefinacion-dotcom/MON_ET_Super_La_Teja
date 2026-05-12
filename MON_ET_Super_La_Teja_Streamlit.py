@@ -129,19 +129,19 @@ def armar_df_pred(muestra, columnas_modelo):
 
     return df_pred, datos_convertidos
 
-def monte_carlo_std(modelo, df_base, n_sim, sigma, factor):
+def monte_carlo_std(modelo, df_base, n_sim, sigma):
     """
-    Simula variando inputs con ruido normal y retorna std de predicciones.
+    Igual que tu código original:
+    ruido ~ Normal(0, SIGMA_ANALITICO * 0.05)
     """
     preds = []
     for _ in range(n_sim):
         df_sim = df_base.copy()
         for col in df_sim.columns:
-            ruido = np.random.normal(0, sigma * factor)
+            ruido = np.random.normal(0, sigma * 0.05)  # <-- fijo como tu script inicial
             df_sim[col] = df_sim[col] + ruido
         preds.append(modelo.predict(df_sim)[0])
-    preds = np.asarray(preds)
-    return preds.std()
+    return np.asarray(preds).std()
 
 # ==========================================================
 # BOTÓN PRINCIPAL
