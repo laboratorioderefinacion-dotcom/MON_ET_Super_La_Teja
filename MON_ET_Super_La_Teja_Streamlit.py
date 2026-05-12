@@ -206,7 +206,7 @@ if archivo is not None:
             mon_et_std = monte_carlo_std(
                 modelo=GBR,
                 df_base=df_pred,
-                n_sim=N_SIM,
+                n_sim=n_sim,
                 sigma=SIGMA_ANALITICO,
                 factor=factor_ruido
             )
