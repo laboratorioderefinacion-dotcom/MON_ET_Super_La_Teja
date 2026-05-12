@@ -207,8 +207,7 @@ if archivo is not None:
                 modelo=GBR,
                 df_base=df_pred,
                 n_sim=n_sim,
-                sigma=SIGMA_ANALITICO,
-                factor=factor_ruido
+                sigma=SIGMA_ANALITICO
             )
             error_reportado = np.round(mon_et_std, 2)
 
